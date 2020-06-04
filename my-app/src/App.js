@@ -1,14 +1,15 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import './App.css';
-import JokeApi from './components/JokeApi'
+import AdviceApi from './components/AdviceApi'
 import Form from './components/Form'
 
 function App() {
-  const [hero, getHero] = useState(null)
+  const [advice, setAdvice] = useState('')
   return (
     <div className="App">
-      <Form />
-      <JokeApi />
+      <h1>Need Advice?</h1>
+      <Form setAdvice={setAdvice}/>
+      <AdviceApi advice={advice}/>
     </div>
   );
 }

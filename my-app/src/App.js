@@ -16,8 +16,9 @@ function App() {
       <Title />
       <div className="d-flex flex-row justify-content-center">
         <SearchAdvice setAdvice={setAdvice} setError={setError} setRandomAdvice={setRandomAdvice}/>
-        <RandomAdvice setRandomAdvice={setRandomAdvice} setAdvice={setAdvice}/>
+        <RandomAdvice setRandomAdvice={setRandomAdvice} setAdvice={setAdvice} setError={setError}/>
       </div>
+      <p className="font-italic font-weight-lighter">Search examples: 'friend', 'love', 'time' or 'spiders'</p>
       {advice ? advice.map((item, i) => <li key={i}>{item.advice}</li>): <p></p>}
       {randomAdvice ? <p>{randomAdvice}</p> : <p></p>}
       {error ? <p>{error}</p> : <p></p>}

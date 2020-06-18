@@ -10,6 +10,7 @@ export default (props) => {
       .then((result) => {
         props.setRandomAdvice(result.data.slip.advice)
         props.setAdvice(null);
+        props.setError('')
       })
       .catch(error => {
         console.log('Something went wrong:', error);

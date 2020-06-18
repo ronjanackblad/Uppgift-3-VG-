@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Anime from "@mollycule/react-anime";
 
 export default () => {
+  // Animated title
   return (
     <div>
       <Anime

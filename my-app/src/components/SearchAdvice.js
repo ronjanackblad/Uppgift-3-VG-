@@ -27,7 +27,12 @@ export default (props) => {
             .then((result) => {
                 props.setRandomAdvice(null)
                 props.setAdvice(result.data.slips);
-                props.setError(result.data.message.text)
+                let error = result.data.slips
+                if (!error) {
+                    props.setError('No advice matching your search: ' + query)
+                } else {
+                    props.setError('')
+                }
             })
             .catch(error => {
                 console.log('Something went wrong:', error);

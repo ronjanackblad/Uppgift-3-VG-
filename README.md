@@ -22,11 +22,11 @@ To install this you will need npm or yarn
 * Material-UI - interface library https://material-ui.com/
 
 ***
-** Author
+## Author
 Ronja Näckblad
 
-** Versioning
+## Versioning
 Git and GitHub
 
-** License 
+## License 
 MIT license, see LICENSE file for more information

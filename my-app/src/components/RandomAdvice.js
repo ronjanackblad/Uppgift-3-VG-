@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 
 export default (props) => {
+  // Component that handles API calls for random advice
   const [loading, setLoading] = useState(false)
 
   const getRandomData = async () => {
@@ -20,8 +21,8 @@ export default (props) => {
 
   return (
     <div>
-        <button className="m-2 btn btn-info" onClick={getRandomData}>Get a random advice</button>
-        {loading && <CircularProgress />}
+      <button className="m-2 btn btn-info" onClick={getRandomData}>Get a random advice</button>
+      {loading && <CircularProgress />}
     </div>
   )
 }

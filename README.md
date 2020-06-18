@@ -21,6 +21,7 @@ To install this you will need npm or yarn
 * Axios - a javascript library for handling API calls https://www.npmjs.com/package/axios
 * Material-UI - interface library https://material-ui.com/
 
+***
 ** Author
 Ronja Näckblad
 

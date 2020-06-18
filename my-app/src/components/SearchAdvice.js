@@ -32,7 +32,7 @@ export default (props) => {
   };
 
     return (
-        <div className="d-flex justify-content-center w-100">
+        <div className="d-flex justify-content-center">
             <form onSubmit={onSubmit} className="d-flex justify-content-center">
                 <input
                     type='text'

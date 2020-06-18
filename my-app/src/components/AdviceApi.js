@@ -27,7 +27,7 @@ export default (props) => {
                 setError(result.data.message.text)
             })
             .catch(error => {
-                // setError(result.data.message.text)
+                console.log('Something went wrong:', error);
             });
     };
 
@@ -39,7 +39,7 @@ export default (props) => {
                 setRandomAdvice(result.data.slip.advice);
             })
             .catch(error => {
-                // setError(result.data.message.text)
+                console.log('Something went wrong:', error);
             });
     };
 

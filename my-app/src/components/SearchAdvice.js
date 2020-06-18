@@ -1,19 +1,35 @@
 import React, { useState } from 'react'
+import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default (props) => {
     const [searchAdvice, setSearchAdvice] = useState('');
 
     const onSubmit = (event) => {
-        event.preventDefault();
-        if (searchAdvice) {
-            props.setAdvice(searchAdvice);
-        }
-    }
-    const handleChange = (e) => {
-        e.preventDefault();
-        setSearchAdvice(e.target.value)
-    }
+      event.preventDefault();
+      if (searchAdvice) {
+          getSearchedData();
+      } else {
+        window.alert('You have to enter something in the searchfield')
+      }
+  }
+  const handleChange = (e) => {
+      e.preventDefault();
+      setSearchAdvice(e.target.value)
+  }
+
+    const getSearchedData = async () => {
+      const query = searchAdvice
+      const url = `https://api.adviceslip.com/advice/search/${query}`
+      await Axios.get(url)
+          .then((result) => {
+              props.setAdvice(result.data.slips);
+              props.setError(result.data.message.text)
+          })
+          .catch(error => {
+              console.log('Something went wrong:', error);
+          });
+  };
 
     return (
         <div className="d-flex justify-content-center w-100">

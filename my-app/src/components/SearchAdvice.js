@@ -10,6 +10,7 @@ export default (props) => {
         event.preventDefault();
         if (searchAdvice) {
             getSearchedData();
+            setSearchAdvice('')
         } else {
             window.alert('You have to enter something in the searchfield')
         }
@@ -24,6 +25,7 @@ export default (props) => {
         const url = `https://api.adviceslip.com/advice/search/${query}`
         await Axios.get(url)
             .then((result) => {
+                props.setRandomAdvice(null)
                 props.setAdvice(result.data.slips);
                 props.setError(result.data.message.text)
             })

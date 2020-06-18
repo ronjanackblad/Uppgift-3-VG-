@@ -3,6 +3,7 @@ import './App.css';
 import RandomAdvice from './components/RandomAdvice'
 import SearchAdvice from './components/SearchAdvice'
 import Title from './components/Title'
+import { set } from 'animejs';
 
 function App() {
   // Main component that renders out the API components and displays result 
@@ -14,10 +15,12 @@ function App() {
     <div className="App">
       <Title />
       <div className="d-flex flex-row justify-content-center">
-        <SearchAdvice setAdvice={setAdvice} setError={setError} />
-        <RandomAdvice setAdvice={setRandomAdvice} />
+        <SearchAdvice setAdvice={setAdvice} setError={setError} setRandomAdvice={setRandomAdvice}/>
+        <RandomAdvice setRandomAdvice={setRandomAdvice} setAdvice={setAdvice}/>
       </div>
-      {advice ? advice.map((item, i) => <li key={i}>{item.advice}</li>) : randomAdvice ? <p>{randomAdvice}</p> : error ? <p>{error}</p> : <p></p>}
+      {advice ? advice.map((item, i) => <li key={i}>{item.advice}</li>): <p></p>}
+      {randomAdvice ? <p>{randomAdvice}</p> : <p></p>}
+      {error ? <p>{error}</p> : <p></p>}
     </div>
   );
 }

@@ -19,7 +19,6 @@ To install this you will need npm or yarn
 * Bootstrap - CSS framework https://getbootstrap.com/
 * Mollycule react anime - a librarybuilt on AnimeJS for wrapping in Anime elements  https://www.npmjs.com/package/@mollycule/react-anime
 * Axios - a javascript library for handling API calls https://www.npmjs.com/package/axios
-* Material-UI - interface library https://material-ui.com/
 
 ***
 ## Author
